@@ -29,7 +29,7 @@ class Config {
         let playgroundUrl = configObj.get('playgroundUrl') as string
         if (!playgroundUrl) {
             playgroundUrl = 'https://play.golang.org'
-        } else if (playgroundUrl.charAt(playgroundUrl.length - 1) === '/') {
+        } else if (playgroundUrl.charAt(playgroundUrl.length - 1) == '/') {
             playgroundUrl = playgroundUrl.slice(0, -1)
         }
 
