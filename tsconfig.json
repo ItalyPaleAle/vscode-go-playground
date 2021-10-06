@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2018",
+		"outDir": "dist",
+		"lib": [
+			"es2018",
+			"WebWorker",
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true,
+		"strictNullChecks": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedParameters": true,
+	},
+	"exclude": [
+		"node_modules",
+		".vscode-test-web"
+	]
+}
