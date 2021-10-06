@@ -1,13 +1,14 @@
 import * as vscode from 'vscode'
 import axios from 'axios'
 
+import config from './config'
+
 /**
  * Returns the handler for the `go-playground.format` command.
  *
- * @param config Configuration object
  * @returns Handler for the command
  */
-export function formatCommandHandler(config: ExtensionConfig): (() => any) {
+export function formatCommandHandler(): (() => any) {
     return async () => {
 		// Get the active text editor
 		const editor = vscode.window.activeTextEditor
@@ -30,7 +31,7 @@ export function formatCommandHandler(config: ExtensionConfig): (() => any) {
 	
 			// Make the request
 			const res = await axios({
-				url: config.playgroundUrl + '/fmt',
+				url: config.config.playgroundUrl + '/fmt',
 				method: 'POST',
 				responseType: 'json',
 				data: body

@@ -2,15 +2,15 @@ import * as vscode from 'vscode'
 import axios from 'axios'
 
 import {timeoutPromise} from './utils'
+import config from './config'
 
 /**
  * Returns the handler for the `go-playground.run` command.
  *
- * @param config Configuration object
  * @param outputCh Output channel where to send output
  * @returns Handler for the command
  */
-export function runCommandHandler(config: ExtensionConfig, outputCh: vscode.OutputChannel): (() => any) {
+export function runCommandHandler(outputCh: vscode.OutputChannel): (() => any) {
     return async () => {
 		// Get the active text editor
 		const editor = vscode.window.activeTextEditor
@@ -38,7 +38,7 @@ export function runCommandHandler(config: ExtensionConfig, outputCh: vscode.Outp
 
 			// Make the request
 			const res = await axios({
-				url: config.playgroundUrl + '/compile',
+				url: config.config.playgroundUrl + '/compile',
 				method: 'POST',
 				responseType: 'json',
 				data: body
