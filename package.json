@@ -3,6 +3,7 @@
 	"displayName": "Go Playground",
 	"description": "Run .go files using the Go Playground",
 	"version": "0.1.0",
+	"license": "MIT",
 	"engines": {
 		"vscode": "^1.60.0"
 	},
