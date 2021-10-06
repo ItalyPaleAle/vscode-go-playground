@@ -10,6 +10,7 @@
 		"Programming Languages"
 	],
 	"activationEvents": [
+		"onLanguage:go",
 		"onCommand:go-playground.format",
 		"onCommand:go-playground.run"
 	],

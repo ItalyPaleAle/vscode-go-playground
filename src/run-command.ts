@@ -58,7 +58,7 @@ export function runCommandHandler(outputCh: vscode.OutputChannel): (() => any) {
 
 				// This doesn't seem to be supported in VS Code for now, the "clear" doesn't work like we need it to and only the last message survives
 				/*// If the message starts with \x0C, clear the screen
-				if (event.Message.length && event.Message.charAt(0) === '\x0C') {
+				if (event.Message.length && event.Message.charAt(0) == '\x0C') {
 					outputCh.clear()
 					event.Message = event.Message.slice(1)
 				}*/
