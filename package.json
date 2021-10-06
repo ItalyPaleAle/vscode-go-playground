@@ -16,6 +16,11 @@
 		"onCommand:go-playground.format",
 		"onCommand:go-playground.run"
 	],
+	"homepage": "https://github.com/ItalyPaleAle/vscode-go-playground",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ItalyPaleAle/vscode-go-playground.git"
+	},
 	"browser": "./dist/extension.js",
 	"contributes": {
 		"commands": [
