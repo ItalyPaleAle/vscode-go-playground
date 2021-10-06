@@ -2,7 +2,7 @@
 	"name": "go-playground",
 	"displayName": "Go Playground",
 	"description": "Run .go files using the Go Playground",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.60.0"
 	},
@@ -13,7 +13,7 @@
 		"onCommand:go-playground.format",
 		"onCommand:go-playground.run"
 	],
-	"browser": "./dist/web/extension.js",
+	"browser": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
@@ -26,10 +26,22 @@
 				"title": "Go Playground: Run current file",
 				"enablement": "editorLangId == go"
 			}
-		]
+		],
+		"configuration": {
+			"title": "Go Playground",
+			"properties": {
+				"go-playground.playgroundUrl": {
+					"type": "string",
+					"default": "https://play.golang.org",
+					"description": "URL of the Go Playground to use; default is `https://play.golang.org`."
+				}
+			}
+		}
 	},
 	"scripts": {
-		"test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
+		"build": "npm run compile-web",
+		"watch": "npm run watch-web",
+		"test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/test/suite/index.js",
 		"pretest": "npm run compile-web",
 		"vscode:prepublish": "npm run package-web",
 		"compile-web": "webpack",
